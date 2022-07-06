@@ -16,13 +16,13 @@ const images = [
 const galleryList = document.querySelector(".gallery");
 
 const makeGalleryImg = (images) => {
-  return images
-    .map(({ url, alt }) => {
-      return `<li><img src ='${url}' alt = "${alt}" style = 'display: block;
-      width: 250px;
-      height: 160px'></li>`;
-    })
-    .join(" ");
+  return images.reduce(
+    (acc, image) =>
+      acc +
+      `<li><img src ='${image.url}' alt = "${image.alt}" style = 'display: block;
+      width: 250px; height: 160px'></li>`,
+    ""
+  );
 };
 
 const allImages = makeGalleryImg(images);
