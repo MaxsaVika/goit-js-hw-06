@@ -9,4 +9,5 @@ itemsOfCategories.forEach((item) => {
 
   console.log(`Category: ${titleEl.textContent}`);
   console.log(`Elements: ${amountOfElements.length}`);
+  // console.log(`Category: ${item.firstElementChild.textContent}`);
 });

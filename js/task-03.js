@@ -17,9 +17,9 @@ const galleryList = document.querySelector(".gallery");
 
 const makeGalleryImg = (images) => {
   return images.reduce(
-    (acc, image) =>
+    (acc, { url, alt }) =>
       acc +
-      `<li><img src ='${image.url}' alt = "${image.alt}" style = 'display: block;
+      `<li><img src ='${url}' alt = "${alt}" style = 'display: block;
       width: 250px; height: 160px'></li>`,
     ""
   );
