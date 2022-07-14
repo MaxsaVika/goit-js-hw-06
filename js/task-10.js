@@ -4,34 +4,54 @@ const boxes = document.querySelector("#boxes");
 const createBtn = document.querySelector("button[data-create]");
 const destroyBtn = document.querySelector("button[data-destroy]");
 
-let amountValue = 0;
-inputNum.addEventListener("input", findAmountBoxes);
+// let amountValue = 0;
+// inputNum.addEventListener("input", findAmountBoxes);
 
-function findAmountBoxes() {
-  amountValue = Number(inputNum.value);
-}
+// function findAmountBoxes() {
+//   amountValue = Number(inputNum.value);
+// }
 
-createBtn.addEventListener("click", () => createBoxes(amountValue));
+// createBtn.addEventListener("click", () => createBoxes(amountValue));
+// destroyBtn.addEventListener("click", resetBoxes);
+
+// function createBoxes(amount) {
+//   resetBoxes();
+
+//   const allBoxes = [];
+
+//   for (let i = 0; i < amount; i++) {
+//     const box = document.createElement("div");
+//     box.style.backgroundColor = getRandomHexColor();
+//     box.style.width = i * 10 + 30 + "px";
+//     box.style.height = i * 10 + 30 + "px";
+
+//     allBoxes.push(box);
+//   }
+//   return boxes.append(...allBoxes);
+// }
+
+createBtn.addEventListener("click", createBoxesCollection);
 destroyBtn.addEventListener("click", resetBoxes);
 
+function createBoxesCollection() {
+  let amountValue = Number(inputNum.value);
+  createBoxes(amountValue);
+}
+
 function createBoxes(amount) {
-  resetBoxes();
-
-  const allBoxes = [];
-
   for (let i = 0; i < amount; i++) {
     const box = document.createElement("div");
     box.style.backgroundColor = getRandomHexColor();
     box.style.width = i * 10 + 30 + "px";
     box.style.height = i * 10 + 30 + "px";
 
-    allBoxes.push(box);
+    boxes.appendChild(box);
   }
-  return boxes.append(...allBoxes);
 }
 
 function resetBoxes() {
   boxes.innerHTML = "";
+  inputNum.value = "";
 }
 
 function getRandomHexColor() {

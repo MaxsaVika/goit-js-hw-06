@@ -9,14 +9,16 @@ incrementBtn.addEventListener("click", onIncrementClick);
 
 function onDecrementClick() {
   counterValue -= 1;
-  changeCounterValue();
+  valueEl.textContent = counterValue;
+  // changeCounterValue();
 }
 
 function onIncrementClick() {
   counterValue += 1;
-  changeCounterValue();
+  valueEl.textContent = counterValue;
+  // changeCounterValue();
 }
 
-const changeCounterValue = () => {
-  valueEl.textContent = counterValue;
-};
+// const changeCounterValue = () => {
+//   valueEl.textContent = counterValue;
+// };
